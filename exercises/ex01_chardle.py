@@ -11,7 +11,7 @@ if(len(ch) != 1):
     print("Error: Character must be a single character.")
     quit()
 count: int = 0
-print("Searching for " + ch + "in " + word)
+print("Searching for " + ch + " in " + word)
 if(word[0] == ch):
     print(ch + " found at index " + str(0))
     count = count + 1
