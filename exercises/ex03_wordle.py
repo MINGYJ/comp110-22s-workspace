@@ -26,11 +26,10 @@ def emojified(secret: str, guess: str) -> str:
     while count < len(secret):
         if(guess[count] == secret[count]):
             emoji_box += GREEN_BOX
+        elif(contains_char(secret, guess[count])):
+            emoji_box += YELLOW_BOX
         else:
-            if(contains_char(secret, guess[count])):
-                emoji_box += YELLOW_BOX
-            else:
-                emoji_box += WHITE_BOX 
+            emoji_box += WHITE_BOX 
         count += 1
     return emoji_box
 
