@@ -17,12 +17,12 @@ def contains_char(secret: str, key: str) -> bool:
 
 def emojified(secret: str, guess: str) -> str:
     """Get the result of comparing two strings."""
-    emoji_box: str = ""
-    count: int = 0
+    emoji_box = ""
+    count = 0
+    assert len(guess) == len(secret)
     WHITE_BOX: str = "\U00002B1C"
     GREEN_BOX: str = "\U0001F7E9"
     YELLOW_BOX: str = "\U0001F7E8"
-    assert len(guess) == len(secret)
     while count < len(secret):
         if(guess[count] == secret[count]):
             emoji_box += GREEN_BOX
@@ -45,15 +45,17 @@ def input_guess(str_length: int) -> str:
 def main() -> None:
     """The entrypoint of the program and main game loop."""
     times: int = 0
-    while(times < 6):
+    flag: bool = False
+    while(times < 6) and not flag:
         print(f"=== Turn {times + 1}/6 ===")
         guess_word: str = input_guess(len("codes"))
         print(emojified("codes", guess_word))
         if(guess_word == "codes"):
             print(f"You won in {times+1}/6 turns!")
-            break
+            flag = True
         times += 1
-    print("X/6 - Sorry, try again tomorrow!")
+    if (not flag):
+        print("X/6 - Sorry, try again tomorrow!")
     
 
 if __name__ == "__main__":
