@@ -12,11 +12,14 @@ def main() -> None:
     blue_turtle: Turtle = Turtle()
     blue_turtle.color(3, 252, 240)
     fast_turtle: Turtle = Turtle()
-    fast_turtle.speed(5)
+    fast_turtle.speed(10)
+    blue_turtle.speed(5)
     draw_multipletri(blue_turtle, 0, 0, 10, 500)
     fast_turtle.begin_fill()
     draw_multipletri(fast_turtle, 0, 0, 2, 200)
     fast_turtle.end_fill()
+    fast_turtle.color("green")
+    draw_hexagon(fast_turtle, 0, 0, 150)
     done()
 
 
@@ -47,6 +50,21 @@ def draw_multipletri(a_turtle: Turtle, x: float, y: float, times: int, length: f
         a_turtle.penup()
         a_turtle.goto(x, y)
         angle += change_angle
+        count += 1
+
+
+def draw_hexagon(a_turtle: Turtle, x: float, y: float, length: float) -> None:
+    """Draw a hexagon at x, y with length."""
+    a_turtle.penup()
+    a_turtle.goto(x, y)
+    a_turtle.setheading(90)
+    a_turtle.forward(length)
+    a_turtle.right(120)
+    count: int = 0
+    a_turtle.pendown()
+    while count < 6: 
+        a_turtle.forward(length)
+        a_turtle.right(60)
         count += 1
 
 
