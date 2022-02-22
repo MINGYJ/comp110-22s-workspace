@@ -1,4 +1,4 @@
-"""TODO: Describe your scene program."""
+"""DRAW A picture with many triangles and one hexagon."""
 
 __author__ = "730486611"
 
