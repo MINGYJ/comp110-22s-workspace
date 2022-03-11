@@ -5,7 +5,7 @@ __author__ = "730486611"
 
 
 def only_evens(number_list: list[int]) -> list[int]:
-    count: int = 0
+    """Output all even numbers."""
     even_list: list[int] = list()
     for count in number_list:
         if(count % 2 == 0):
@@ -14,6 +14,7 @@ def only_evens(number_list: list[int]) -> list[int]:
 
 
 def sub(n_list: list[int], start: int, end: int) -> list[int]:
+    """The function used to get sublist in one interval."""
     count: int = 0
     sub_list: list[int] = list()
     if(start < 0):
@@ -28,6 +29,7 @@ def sub(n_list: list[int], start: int, end: int) -> list[int]:
             
 
 def concat(a_list: list[int], b_list: list[int]) -> list[int]:
+    """Function used to add two list."""
     ab_list: list[int] = a_list
     for numbers in b_list:
         ab_list.append(numbers)
